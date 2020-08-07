@@ -7,8 +7,8 @@
 
 SELECT
 	item_name,
-	COUNT (CASE WHEN times_user_reordered >1 THEN CAST (1 as INT) ELSE NULL END) *100/ COUNT (*) AS user_reorder_percentage,
-	COUNT (CASE WHEN times_user_reordered =1 THEN CAST (1 AS INT) ELSE NULL END) *100/ COUNT (*) AS user_no_reorder_percentage
+	COUNT (CASE WHEN times_user_reordered >1 THEN CAST (1 as INT) ELSE NULL END) *100/ COUNT (*) AS reorder_percentage,
+	COUNT (CASE WHEN times_user_reordered =1 THEN CAST (1 AS INT) ELSE NULL END) *100/ COUNT (*) AS no_reorder_percentage
 FROM 
 	(
 	SELECT
