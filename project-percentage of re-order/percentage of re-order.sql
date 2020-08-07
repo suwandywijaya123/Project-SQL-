@@ -51,25 +51,6 @@ WHERE
 GROUP BY 
   user_id, invoice_id, item_name
   
- --total number of times each item being order
-
-SELECT 
-	item_name,
-	COUNT (item_name) AS total_orders_per_item
-FROM
-	(SELECT 
-		user_id,
-		invoice_id,
-		item_name,
-		COUNT (item_name) AS Count_item
-	FROM
-		dsv1069.orders orders
-	WHERE 
-		paid_at IS NOT NULL
-	GROUP BY 
-		user_id, invoice_id, item_name) count_item_same_invoice
-GROUP BY item_name
-ORDER BY COUNT (item_name) DESC
 
 -- users that do have re-order the same items. (Note: order counts means order at different timing. This means that invoiceID is different)
 
@@ -96,7 +77,6 @@ HAVING
   COUNT (item_name) >1
 
 -- users that do not have re-order the same items. (Note: order counts means order at different timing. This means that invoiceID is different)
-
 
 
 SELECT
