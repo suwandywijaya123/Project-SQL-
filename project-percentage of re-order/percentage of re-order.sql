@@ -1,6 +1,6 @@
 --Exploratory questions 
 --Note: Using Postgresql 
---Given the order table, analyse its item re-order and recommending solution on how to improve its sales and generate more revenues.
+--Given the order table, analyse its item re-order.
 
 
 --percentage item re-order.
@@ -32,7 +32,6 @@ ORDER BY COUNT (CASE WHEN times_user_reordered >1 THEN CAST (1 as INT) ELSE NULL
 
 --based on the analysis, Majority of items from current list do not have re-order by respective customers (over 90% of customers are not re-ordering). 
 --Of those items that are having re-order by customers, the percentage of its re-order are very low.
---Thus, in order to sustain its revenue growth, company are are either recommended to bring in new items instead of adding more inventories on current item lists or looking for more new customers.
 
 
 --draft code 
